@@ -22,7 +22,7 @@ export class TasksService {
       id: uuid(),
       title,
       description,
-      taskStatus: TaskStatus.TODO,
+      status: TaskStatus.TODO,
     };
 
     this.tasks.push(task);
@@ -32,8 +32,7 @@ export class TasksService {
 
   updateTaskStatus(id: string, status: TaskStatus): Task {
     const task = this.getTaskById(id);
-    console.log({ task });
-    task.taskStatus = status;
+    task.status = status;
     return task;
   }
 
